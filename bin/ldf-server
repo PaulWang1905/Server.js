@@ -24,7 +24,9 @@ loader.registerAvailableModuleResources()
     if (cluster.isMaster) {
       return loader.getConfigConstructorFromUrl(configUri, args[0])
         .then(function (constructor) {
-          startClusterMaster(constructor.makeArguments(true)[0]);
+          return constructor.makeArguments(true).then(function (args) {
+            startClusterMaster(args[0]);
+          });
         })
         .catch(function (e) {
           console.error('Config error:');
