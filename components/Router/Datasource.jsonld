@@ -7,7 +7,26 @@
       "@type": "Class",
       "extends": "ldfs:Router",
       "requireElement": "routers.DatasourceRouter",
-      "comment": "A DatasourceRouter routes URLs to data sources"
+      "comment": "A DatasourceRouter routes URLs to data sources",
+      "parameters": [
+        {
+          "@id": "ldfs:DatasourceRouter/urlData",
+          "inheritValues": {
+            "@type": "InheritanceValue",
+            "onParameter": "ldfs:urlData",
+            "from": "ldfs:Server/Qpf"
+          }
+        }
+      ],
+      "constructorArguments": [
+        {
+          "fields": [
+            {
+              "@id": "ldfs:Server/Qpf/ObjectMappings/urlData"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
