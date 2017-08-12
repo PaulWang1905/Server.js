@@ -58,7 +58,7 @@
               "@id": "ldfs:defaultIndexDatasource",
               "@type": "ldfs:Datasource/Index",
               "rdfs:label": "dataset index",
-              "ldfs:Datasource/path": "",
+              "ldfs:Datasource/path": "/",
               "ldfs:Datasource/hidden": true
             }
           ]
