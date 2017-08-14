@@ -33,7 +33,7 @@ describe('QuadPatternFragmentsController', function () {
         extractQueryParams: sinon.spy(function (request, query) {
           query.features.datasource = true;
           query.features.other = true;
-          query.datasource = 'my-datasource';
+          query.datasource = '/my-datasource';
           query.other = 'other';
         }),
       };
@@ -146,7 +146,7 @@ describe('QuadPatternFragmentsController', function () {
         });
         settings.prefixes.should.deep.equal(prefixes);
         settings.query.should.deep.equal(query);
-        settings.datasources.should.deep.equal(datasources);
+        settings.datasources.should.deep.equal({ '/my-datasource': datasource });
         query.should.have.property('patternString', '{ ?s ?p ?o ?g. }');
       });
     });
@@ -186,7 +186,7 @@ describe('QuadPatternFragmentsController', function () {
       var router = {
         extractQueryParams: function (request, query) {
           query.features.datasource = true;
-          query.datasource = 'my-datasource';
+          query.datasource = '/my-datasource';
         },
       };
       htmlView = new QuadPatternFragmentsHtmlView();
@@ -322,7 +322,7 @@ describe('QuadPatternFragmentsController', function () {
       var router = {
         extractQueryParams: function (request, query) {
           query.features.datasource = true;
-          query.datasource = 'my-datasource';
+          query.datasource = '/my-datasource';
         },
       };
       controller = new QuadPatternFragmentsController({
@@ -379,7 +379,7 @@ describe('QuadPatternFragmentsController', function () {
       router = {
         extractQueryParams: sinon.spy(function (request, query) {
           query.features.datasource = true;
-          query.datasource = 'my-datasource';
+          query.datasource = '/my-datasource';
         }),
       };
       error = new Error('datasource error'),
@@ -392,7 +392,7 @@ describe('QuadPatternFragmentsController', function () {
       controller = new QuadPatternFragmentsController({
         routers: [router],
         views: [view],
-        datasources: { 'my-datasource': datasource },
+        datasources: { '/my-datasource': datasource },
       });
       client = request.agent(new DummyServer(controller));
     });
@@ -418,7 +418,7 @@ describe('QuadPatternFragmentsController', function () {
       router = {
         extractQueryParams: sinon.spy(function (request, query) {
           query.features.datasource = true;
-          query.datasource = 'my-datasource';
+          query.datasource = '/my-datasource';
         }),
       };
       error = new Error('datasource error'),
