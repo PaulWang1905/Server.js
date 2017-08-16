@@ -7,6 +7,13 @@
       "@type": "AbstractClass",
       "parameters": [
         {
+          "@id": "rdfs:label",
+          "defaultScoped": {
+            "defaultScope": "ldfs:Datasource",
+            "defaultScopedValue": "My datasource"
+          }
+        },
+        {
           "@id": "ldfs:Datasource/description",
           "comment": "The datasource description",
           "range": "xsd:string",
@@ -77,7 +84,7 @@
             },
             {
               "keyRaw": "title",
-              "value": "ldfs:title"
+              "value": "rdfs:label"
             },
             {
               "keyRaw": "description",

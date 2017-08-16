@@ -9,11 +9,14 @@
       "comment": "LinkedDataFragmentsServer is an HTTP server that provides access to Linked Data Fragments",
       "parameters": [
         {
-          "@id": "ldfs:title",
-          "comment": "The server name",
+          "@id": "rdfs:label",
+          "comment": "The name",
           "range": "xsd:string",
           "unique": true,
-          "default": "Linked Data Fragments server"
+          "defaultScoped": {
+            "defaultScope": "ldfs:Server/Qpf",
+            "defaultScopedValue": "Linked Data Fragments server"
+          }
         },
         {
           "@id": "ldfs:baseURL",
@@ -188,7 +191,7 @@
             {
               "@id": "ldfs:Server/Qpf/ObjectMappings/title",
               "keyRaw": "title",
-              "value": "ldfs:title"
+              "value": "rdfs:label"
             },
             {
               "@id": "ldfs:Server/Qpf/ObjectMappings/urlData",

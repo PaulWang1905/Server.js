@@ -8,7 +8,7 @@
       "rdfa": "http://www.w3.org/ns/rdfa#",
 
       "QpfServer": "ldfs:Server/Qpf",
-      "title": "ldfs:title",
+      "title": "rdfs:label",
       "baseURL": "ldfs:baseURL",
       "protocol": "ldfs:protocol",
 
