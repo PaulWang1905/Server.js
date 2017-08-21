@@ -71,6 +71,11 @@ function startClusterMaster(config) {
     });
   });
 
+  // Disconnect from cluster on SIGINT, so that the process can cleanly terminate
+  process.once('SIGINT', function () {
+    cluster.disconnect();
+  });
+
   // Respawn workers one by one when receiving a SIGHUP signal
   process.on('SIGHUP', function respawn() {
     console.log('Respawning workers of master %d.', process.pid);
