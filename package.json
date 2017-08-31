@@ -1,7 +1,7 @@
 {
   "name": "ldf-server",
   "description": "Linked Data Fragments Server",
-  "version": "2.2.2",
+  "version": "3.0.0",
   "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/ldf-server",
   "lsd:components": "components/components.jsonld",
   "lsd:contexts": {
