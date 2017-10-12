@@ -165,6 +165,10 @@ which can be used as follows:
 
 All available plugins can be found on [NPM](https://www.npmjs.com/org/ldf).
 
+**important:** If you clone this repository, plugins can not be installed directly inside the server's modules.
+Either the server and the plugins must be installed as part of a (virtual) module,
+or they must all be available as global modules.
+
 ### _(Optional)_ Set up a reverse proxy
 
 A typical Linked Data Fragments server will be exposed
