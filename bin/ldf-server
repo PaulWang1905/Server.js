@@ -63,7 +63,7 @@ function startClusterMaster(config) {
   // Respawn crashed workers
   cluster.on('listening', function (worker) {
     worker.once('exit', function (code, signal) {
-      if (!worker.suicide) {
+      if (!worker.exitedAfterDisconnect) {
         console.log('Worker %d died with %s. Starting new worker.',
           worker.process.pid, code || signal);
         cluster.fork();
